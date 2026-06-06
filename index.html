@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EZ Manga — Read Thousands of Manga, Free & Offline</title>
+<meta name="description" content="EZ Manga is the easiest way to discover, read, and collect thousands of manga on your phone. Free, ad-light, and made for true fans." />
+<link rel="icon" type="image/png" href="512 icon app.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bangers&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #ff3d68;
+    --brand-2: #ff8a3d;
+    --ink: #0b0b14;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--ink); color: #fff; }
+  .font-display { font-family: 'Bangers', sans-serif; letter-spacing: 0.04em; }
+  .brand-gradient { background: linear-gradient(135deg, #ff3d68 0%, #ff8a3d 100%); }
+  .brand-gradient-text {
+    background: linear-gradient(135deg, #ff3d68 0%, #ff8a3d 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .glow { box-shadow: 0 20px 60px -15px rgba(255,61,104,0.55); }
+  .grain::before {
+    content:""; position:absolute; inset:0;
+    background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 3px 3px; pointer-events:none;
+  }
+  .phone {
+    width: 280px; height: 560px; border-radius: 42px;
+    background: #111; border: 10px solid #1a1a24;
+    box-shadow: 0 40px 80px -20px rgba(255,61,104,0.4), 0 0 0 1px rgba(255,255,255,0.06);
+    overflow: hidden; position: relative;
+  }
+  .phone-screen {
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(255,61,104,0.4), transparent 50%),
+      radial-gradient(circle at 80% 100%, rgba(255,138,61,0.3), transparent 50%),
+      #15151f;
+    position: relative;
+  }
+  .manga-card {
+    aspect-ratio: 2/3; border-radius: 12px;
+    background-size: cover; background-position: center;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+  }
+  .float-anim { animation: float 6s ease-in-out infinite; }
+  .float-anim-2 { animation: float 7s ease-in-out infinite -3s; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  .blob { position:absolute; filter: blur(80px); opacity:0.5; border-radius:50%; }
+</style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-black/40 border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2">
+      <img src="512 icon app.png" alt="EZ Manga" class="w-9 h-9 rounded-xl object-cover" />
+      <span class="font-bold text-lg">EZ Manga</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-white/70">
+      <a href="#features" class="hover:text-white">Features</a>
+      <a href="#how" class="hover:text-white">How it works</a>
+      <a href="#reviews" class="hover:text-white">Reviews</a>
+      <a href="#faq" class="hover:text-white">FAQ</a>
+    </nav>
+    <a href="#download" class="brand-gradient px-4 py-2 rounded-full text-sm font-semibold hover:scale-105 transition">
+      Get the App
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden grain">
+  <div class="blob brand-gradient" style="width:500px;height:500px;top:-150px;left:-150px"></div>
+  <div class="blob" style="width:400px;height:400px;bottom:-100px;right:-100px;background:#7d3dff"></div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs font-medium mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+        New chapters added every hour
+      </div>
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] mb-6">
+        Your entire <span class="brand-gradient-text">manga shelf</span><br>in one pocket.
+      </h1>
+      <p class="text-lg text-white/70 mb-8 max-w-xl leading-relaxed">
+        Discover, read, and collect thousands of manga — from the latest weekly hits to hidden gems. Built for true fans. Ad-light, offline-ready, and lightning fast.
+      </p>
+
+      <!-- Store buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-8">
+        <a href="https://play.google.com/store/apps/details?id=com.app.ezmanga" target="_blank"
+           class="flex items-center gap-3 bg-white text-black px-5 py-3 rounded-2xl hover:scale-105 transition glow">
+          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198 2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.211 12l2.487-2.491zM5.864 2.658 16.802 8.99l-2.302 2.303-8.636-8.635z"/></svg>
+          <div class="text-left leading-tight">
+            <div class="text-[10px] uppercase tracking-wide opacity-70">Get it on</div>
+            <div class="text-base font-bold">Google Play</div>
+          </div>
+        </a>
+        <a href="https://apps.apple.com/app/ez-manga-web-browser/id676212669" target="_blank"
+           class="flex items-center gap-3 bg-white/10 border border-white/15 px-5 py-3 rounded-2xl hover:bg-white/15 transition">
+          <svg viewBox="0 0 24 24" class="w-7 h-7" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div class="text-left leading-tight">
+            <div class="text-[10px] uppercase tracking-wide opacity-70">Download on the</div>
+            <div class="text-base font-bold">App Store</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Social proof -->
+      <div class="flex items-center gap-5">
+        <div class="flex -space-x-2">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 border-2 border-[#0b0b14] flex items-center justify-center text-white text-xs font-bold">A</div>
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 border-2 border-[#0b0b14] flex items-center justify-center text-white text-xs font-bold">M</div>
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-orange-400 to-red-500 border-2 border-[#0b0b14] flex items-center justify-center text-white text-xs font-bold">S</div>
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-teal-400 to-emerald-600 border-2 border-[#0b0b14] flex items-center justify-center text-white text-xs font-bold">J</div>
+        </div>
+        <div>
+          <div class="flex items-center gap-1 text-yellow-400">
+            <span>★★★★★</span><span class="text-white font-bold ml-1">4.8</span>
+          </div>
+          <div class="text-xs text-white/60">Loved by 500,000+ manga readers</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone mockup -->
+    <div class="relative flex justify-center items-center min-h-[640px] py-12 lg:py-16 px-8 lg:px-20">
+      <div class="phone float-anim" style="background:#000;border-color:#0a0a0a">
+        <img src="screens_hero.png"
+             class="absolute inset-0 w-full h-full object-cover z-10" alt="EZ Manga app" />
+        <div class="phone-screen p-4" style="background:#000">
+          <div class="flex justify-between items-center text-[10px] text-white/70 mb-3">
+            <span>8:54</span>
+            <span>▲ 🔋</span>
+          </div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:#3a1a0a;color:#ff7a3d">📖</div>
+              <div class="font-bold text-base">Ez Manga</div>
+            </div>
+            <div class="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-white/70">≡</div>
+          </div>
+          <div class="flex gap-2 mb-4 text-[10px]">
+            <span class="px-3 py-1.5 rounded-full border" style="border-color:#ff7a3d;color:#ff7a3d">Home</span>
+            <span class="px-3 py-1.5 rounded-full border border-white/10 text-white/60">Reading</span>
+            <span class="px-3 py-1.5 rounded-full border border-white/10 text-white/60">Paused</span>
+            <span class="px-3 py-1.5 rounded-full border border-white/10 text-white/60">Plan</span>
+          </div>
+          <div class="rounded-2xl p-3 mb-4 flex items-center gap-3" style="background:linear-gradient(90deg,#3a1a0a,#1a0e05);border:1px solid #5a2a10">
+            <div class="w-12 h-16 rounded-lg" style="background:linear-gradient(135deg,#c41a1a,#7a0d0d)"></div>
+            <div class="flex-1 min-w-0">
+              <div class="text-[9px]" style="color:#ff7a3d">▶ Continue Reading</div>
+              <div class="text-xs font-bold truncate">Jujutsu Kaisen Manga</div>
+              <div class="text-[9px] text-white/50 truncate">Chapter 4: Steel Beam Girl</div>
+            </div>
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white" style="background:#ff7a3d">▶</div>
+          </div>
+          <div class="flex justify-between items-center mb-2">
+            <div class="text-xs font-bold">Favorite sites</div>
+            <div class="flex gap-1" style="color:#ff7a3d">⌄ ⊕</div>
+          </div>
+          <div class="grid grid-cols-4 gap-2 mb-4">
+            <div class="aspect-square rounded-xl bg-white/5 flex items-center justify-center text-base">📖</div>
+            <div class="aspect-square rounded-xl bg-white/5 flex items-center justify-center text-base">🌐</div>
+            <div class="aspect-square rounded-xl bg-white/5 flex items-center justify-center text-base">🌐</div>
+            <div class="aspect-square rounded-xl bg-white/5 flex items-center justify-center text-base">⚡</div>
+          </div>
+          <div class="flex justify-between items-center mb-2">
+            <div class="text-xs font-bold">My Library</div>
+            <div class="text-[10px]" style="color:#ff7a3d">See All ›</div>
+          </div>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="manga-card" style="background:linear-gradient(135deg,#c41a1a,#7a0d0d)"></div>
+            <div class="manga-card" style="background:linear-gradient(135deg,#1a3a8a,#0d1a4a)"></div>
+            <div class="manga-card" style="background:linear-gradient(135deg,#1a7a8a,#0d3a4a)"></div>
+          </div>
+        </div>
+      </div>
+      <!-- floating chips -->
+      <div class="hidden lg:block absolute left-0 top-0 bg-white text-black rounded-2xl px-4 py-3 shadow-2xl float-anim-2">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full brand-gradient flex items-center justify-center text-white">📚</div>
+          <div>
+            <div class="text-xs font-bold">50+ sources</div>
+            <div class="text-[10px] text-black/60">All in one app</div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block absolute left-0 bottom-8 bg-white text-black rounded-2xl px-4 py-3 shadow-2xl float-anim">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full brand-gradient flex items-center justify-center text-white">🛡</div>
+          <div>
+            <div class="text-xs font-bold">Block ads</div>
+            <div class="text-[10px] text-black/60">Clean reading</div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block absolute right-0 top-8 bg-white text-black rounded-2xl px-4 py-3 shadow-2xl float-anim">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full brand-gradient flex items-center justify-center text-white">★</div>
+          <div>
+            <div class="text-xs font-bold">Favorite all sites</div>
+            <div class="text-[10px] text-black/60">One library</div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block absolute right-0 bottom-0 bg-white text-black rounded-2xl px-4 py-3 shadow-2xl float-anim-2">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full brand-gradient flex items-center justify-center text-white">☁</div>
+          <div>
+            <div class="text-xs font-bold">Sync across devices</div>
+            <div class="text-[10px] text-black/60">Pick up anywhere</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO BAR / STATS -->
+<section class="border-y border-white/5 bg-white/[0.02]">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div>
+      <div class="font-display text-4xl brand-gradient-text">50K+</div>
+      <div class="text-sm text-white/60">Manga titles</div>
+    </div>
+    <div>
+      <div class="font-display text-4xl brand-gradient-text">500K+</div>
+      <div class="text-sm text-white/60">Active readers</div>
+    </div>
+    <div>
+      <div class="font-display text-4xl brand-gradient-text">4.8★</div>
+      <div class="text-sm text-white/60">Play Store rating</div>
+    </div>
+    <div>
+      <div class="font-display text-4xl brand-gradient-text">100%</div>
+      <div class="text-sm text-white/60">Free to read</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-sm font-semibold brand-gradient-text uppercase tracking-widest mb-3">Why EZ Manga</div>
+      <h2 class="text-4xl lg:text-5xl font-bold mb-4">Built for readers who actually read.</h2>
+      <p class="text-white/60 text-lg">No paywalls in the middle of chapters. No clunky reader. Just manga.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-pink-500/40 transition">
+        <div class="w-12 h-12 rounded-2xl brand-gradient flex items-center justify-center text-2xl mb-5">📚</div>
+        <h3 class="text-xl font-bold mb-2">Massive library</h3>
+        <p class="text-white/60">Over 50,000 titles across shonen, seinen, shojo, manhwa, manhua — updated hourly.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-pink-500/40 transition">
+        <div class="w-12 h-12 rounded-2xl brand-gradient flex items-center justify-center text-2xl mb-5">📥</div>
+        <h3 class="text-xl font-bold mb-2">Read offline</h3>
+        <p class="text-white/60">Download chapters with one tap. Read on flights, commutes, anywhere.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-pink-500/40 transition">
+        <div class="w-12 h-12 rounded-2xl brand-gradient flex items-center justify-center text-2xl mb-5">🌙</div>
+        <h3 class="text-xl font-bold mb-2">True dark mode</h3>
+        <p class="text-white/60">Pure black AMOLED reader designed for night sessions without burning your eyes.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-pink-500/40 transition">
+        <div class="w-12 h-12 rounded-2xl brand-gradient flex items-center justify-center text-2xl mb-5">⚡</div>
+        <h3 class="text-xl font-bold mb-2">Lightning fast</h3>
+        <p class="text-white/60">Pages preload as you read. No spinners. No waiting between chapters.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-pink-500/40 transition">
+        <div class="w-12 h-12 rounded-2xl brand-gradient flex items-center justify-center text-2xl mb-5">🔔</div>
+        <h3 class="text-xl font-bold mb-2">Update alerts</h3>
+        <p class="text-white/60">Get notified the second a new chapter of your favorite series drops.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-pink-500/40 transition">
+        <div class="w-12 h-12 rounded-2xl brand-gradient flex items-center justify-center text-2xl mb-5">☁️</div>
+        <h3 class="text-xl font-bold mb-2">Cloud sync</h3>
+        <p class="text-white/60">Your library and reading progress stay synced across all your devices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="py-24 bg-gradient-to-b from-transparent via-pink-950/10 to-transparent">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-4">Start reading in 60 seconds.</h2>
+      <p class="text-white/60 text-lg">Three taps. No signup wall.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8">
+        <div class="font-display text-7xl brand-gradient-text mb-3">01</div>
+        <h3 class="text-xl font-bold mb-2">Install the app</h3>
+        <p class="text-white/60">Free on Google Play. Under 20MB.</p>
+      </div>
+      <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8">
+        <div class="font-display text-7xl brand-gradient-text mb-3">02</div>
+        <h3 class="text-xl font-bold mb-2">Pick your genres</h3>
+        <p class="text-white/60">Get personalized recommendations from day one.</p>
+      </div>
+      <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8">
+        <div class="font-display text-7xl brand-gradient-text mb-3">03</div>
+        <h3 class="text-xl font-bold mb-2">Dive in</h3>
+        <p class="text-white/60">Start reading instantly. Bookmark, download, enjoy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews" class="py-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-4">Readers can't stop talking.</h2>
+      <div class="text-yellow-400 text-xl">★★★★★ <span class="text-white">4.8 from 28,000+ reviews</span></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <div class="text-yellow-400 mb-3">★★★★★</div>
+        <p class="text-white/80 mb-5">"Finally a manga app that doesn't shove ads between every page. The reader is clean and the library is huge."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-600"></div>
+          <div>
+            <div class="font-semibold text-sm">Kenji M.</div>
+            <div class="text-xs text-white/50">Verified user</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <div class="text-yellow-400 mb-3">★★★★★</div>
+        <p class="text-white/80 mb-5">"I read on my commute every day. Offline mode is a lifesaver in the subway. Switched from 3 other apps to this one."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500"></div>
+          <div>
+            <div class="font-semibold text-sm">Maya R.</div>
+            <div class="text-xs text-white/50">Verified user</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <div class="text-yellow-400 mb-3">★★★★★</div>
+        <p class="text-white/80 mb-5">"Updates faster than any other app I've tried. New One Piece chapter shows up within minutes. 10/10."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-indigo-600"></div>
+          <div>
+            <div class="font-semibold text-sm">Alex T.</div>
+            <div class="text-xs text-white/50">Verified user</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-24">
+  <div class="max-w-3xl mx-auto px-5 lg:px-8">
+    <h2 class="text-4xl lg:text-5xl font-bold text-center mb-12">Questions, answered.</h2>
+    <div class="space-y-3">
+      <details class="group bg-white/5 border border-white/10 rounded-2xl p-5 cursor-pointer">
+        <summary class="font-semibold flex justify-between items-center">Is EZ Manga free?<span class="group-open:rotate-45 transition text-xl">+</span></summary>
+        <p class="text-white/60 mt-3">Yes. 100% free to read. We keep ads light and never block chapters behind paywalls.</p>
+      </details>
+      <details class="group bg-white/5 border border-white/10 rounded-2xl p-5 cursor-pointer">
+        <summary class="font-semibold flex justify-between items-center">Can I read offline?<span class="group-open:rotate-45 transition text-xl">+</span></summary>
+        <p class="text-white/60 mt-3">Yes. Tap the download icon on any chapter to save it locally. Read with no internet, no problem.</p>
+      </details>
+      <details class="group bg-white/5 border border-white/10 rounded-2xl p-5 cursor-pointer">
+        <summary class="font-semibold flex justify-between items-center">Is it available on iPhone?<span class="group-open:rotate-45 transition text-xl">+</span></summary>
+        <p class="text-white/60 mt-3">An iOS version is in the works. For now, EZ Manga is available on Android via Google Play.</p>
+      </details>
+      <details class="group bg-white/5 border border-white/10 rounded-2xl p-5 cursor-pointer">
+        <summary class="font-semibold flex justify-between items-center">How often is content updated?<span class="group-open:rotate-45 transition text-xl">+</span></summary>
+        <p class="text-white/60 mt-3">New chapters are added hourly. Popular series get updated within minutes of release.</p>
+      </details>
+      <details class="group bg-white/5 border border-white/10 rounded-2xl p-5 cursor-pointer">
+        <summary class="font-semibold flex justify-between items-center">Do I need to create an account?<span class="group-open:rotate-45 transition text-xl">+</span></summary>
+        <p class="text-white/60 mt-3">No. You can start reading instantly. Create an optional account only if you want to sync across devices.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="download" class="py-24 relative overflow-hidden">
+  <div class="blob brand-gradient" style="width:600px;height:600px;top:-200px;left:50%;transform:translateX(-50%);opacity:0.3"></div>
+  <div class="max-w-4xl mx-auto px-5 lg:px-8 text-center relative">
+    <h2 class="font-display text-5xl lg:text-7xl mb-6 leading-none">
+      Your next favorite series<br><span class="brand-gradient-text">is one tap away.</span>
+    </h2>
+    <p class="text-white/70 text-lg mb-10 max-w-xl mx-auto">Join 500,000+ readers. Free forever. No signup needed to start.</p>
+
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://play.google.com/store/apps/details?id=com.app.ezmanga" target="_blank"
+         class="flex items-center justify-center gap-3 bg-white text-black px-6 py-4 rounded-2xl hover:scale-105 transition glow">
+        <svg viewBox="0 0 24 24" class="w-7 h-7" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893 2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198 2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.211 12l2.487-2.491zM5.864 2.658 16.802 8.99l-2.302 2.303-8.636-8.635z"/></svg>
+        <div class="text-left leading-tight">
+          <div class="text-[10px] uppercase tracking-wide opacity-70">Get it on</div>
+          <div class="text-base font-bold">Google Play</div>
+        </div>
+      </a>
+      <a href="https://apps.apple.com/app/ez-manga-web-browser/id676212669" target="_blank"
+         class="flex items-center justify-center gap-3 bg-white/10 border border-white/15 px-6 py-4 rounded-2xl hover:bg-white/15 transition">
+        <svg viewBox="0 0 24 24" class="w-7 h-7" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div class="text-left leading-tight">
+          <div class="text-[10px] uppercase tracking-wide opacity-70">Download on the</div>
+          <div class="text-base font-bold">App Store</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <img src="512 icon app.png" alt="EZ Manga" class="w-8 h-8 rounded-lg object-cover" />
+      <span class="font-bold">EZ Manga</span>
+      <span class="text-white/40 text-sm ml-2">© 2026</span>
+    </div>
+    <div class="flex gap-6 text-sm text-white/50">
+      <a href="privacy.html" class="hover:text-white">Privacy</a>
+      <a href="terms.html" class="hover:text-white">Terms</a>
+      <a href="mailto:ailabvn91@gmail.com" class="hover:text-white">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile sticky CTA -->
+<a href="https://play.google.com/store/apps/details?id=com.app.ezmanga" target="_blank"
+   class="md:hidden fixed bottom-4 left-4 right-4 brand-gradient text-center py-4 rounded-2xl font-bold z-50 glow">
+  Get EZ Manga — Free
+</a>
+
+</body>
+</html>
