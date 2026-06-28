@@ -53,6 +53,10 @@
   .float-anim-2 { animation: float 7s ease-in-out infinite -3s; }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
   .blob { position:absolute; filter: blur(80px); opacity:0.5; border-radius:50%; }
+  @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+  .marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-wrap { overflow: hidden; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); }
 </style>
 </head>
 <body class="overflow-x-hidden">
@@ -85,13 +89,13 @@
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs font-medium mb-6">
         <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-        New chapters added every hour
+        50+ manga sites
       </div>
       <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] mb-6">
-        Your entire <span class="brand-gradient-text">manga shelf</span><br>in one pocket.
+        All your favorite <span class="brand-gradient-text">manga sites,</span><br>in one app.
       </h1>
       <p class="text-lg text-white/70 mb-8 max-w-xl leading-relaxed">
-        Discover, read, and collect thousands of manga — from the latest weekly hits to hidden gems. Built for true fans. Ad-light, offline-ready, and lightning fast.
+        Discover, read, and collect thousands of manga from 50+ manga sites. Built for true fans. Ad-light, offline-ready, and lightning fast.
       </p>
 
       <!-- Store buttons -->
@@ -104,7 +108,7 @@
             <div class="text-base font-bold">Google Play</div>
           </div>
         </a>
-        <a href="https://apps.apple.com/app/ez-manga-web-browser/id676212669" target="_blank"
+        <a href="https://apps.apple.com/app/ez-manga-web-browser/id6762126699" target="_blank"
            class="flex items-center gap-3 bg-white/10 border border-white/15 px-5 py-3 rounded-2xl hover:bg-white/15 transition">
           <svg viewBox="0 0 24 24" class="w-7 h-7" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
           <div class="text-left leading-tight">
@@ -246,6 +250,56 @@
     </div>
   </div>
 </section>
+<!-- SOURCES TICKER -->
+<section class="py-14 border-y border-white/5 overflow-hidden">
+  <div class="text-center mb-8">
+    <p class="text-sm font-semibold uppercase tracking-widest brand-gradient-text">Support 50+ sites</p>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track gap-3">
+      <!-- set 1 -->
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🔥 ArenaScan</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">☕ Coffee Manga</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">📖 Comix.to</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🌸 Harimanga</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">⚡ MangaCK</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🔥 MangaFire</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">📚 MangaRead</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🍣 Mangasushi</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🌙 Manhwaden</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">✨ NyraxManga</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">💜 Rinkocomics</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🔮 VioletScans</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">⚡ Zazamanga</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🔥 Asura Scans</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🌊 Flame Comics</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🕸️ Webtoons</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">📖 Mgeko</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🎨 Mangazin</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🖋️ Tapas.io</span>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🔥 ArenaScan</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">☕ Coffee Manga</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">📖 Comix.to</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🌸 Harimanga</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">⚡ MangaCK</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🔥 MangaFire</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">📚 MangaRead</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🍣 Mangasushi</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🌙 Manhwaden</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">✨ NyraxManga</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">💜 Rinkocomics</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🔮 VioletScans</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">⚡ Zazamanga</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🔥 Asura Scans</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🌊 Flame Comics</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🕸️ Webtoons</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">📖 Mgeko</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🎨 Mangazin</span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 mx-2 rounded-full bg-white/5 border border-white/10 text-sm font-medium whitespace-nowrap hover:border-pink-500/40 transition">🖋️ Tapas.io</span>
+    </div>
+  </div>
+</section>
 
 <!-- FEATURES -->
 <section id="features" class="py-24">
@@ -295,24 +349,29 @@
 <section id="how" class="py-24 bg-gradient-to-b from-transparent via-pink-950/10 to-transparent">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-4xl lg:text-5xl font-bold mb-4">Start reading in 60 seconds.</h2>
-      <p class="text-white/60 text-lg">Three taps. No signup wall.</p>
+      <h2 class="text-4xl lg:text-5xl font-bold mb-4">Start reading in seconds.</h2>
+      <p class="text-white/60 text-lg">Four simple steps. No account needed.</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8">
         <div class="font-display text-7xl brand-gradient-text mb-3">01</div>
         <h3 class="text-xl font-bold mb-2">Install the app</h3>
-        <p class="text-white/60">Free on Google Play. Under 20MB.</p>
+        <p class="text-white/60">Free on Google Play and App Store.</p>
       </div>
       <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8">
         <div class="font-display text-7xl brand-gradient-text mb-3">02</div>
-        <h3 class="text-xl font-bold mb-2">Pick your genres</h3>
-        <p class="text-white/60">Get personalized recommendations from day one.</p>
+        <h3 class="text-xl font-bold mb-2">Pick a source</h3>
+        <p class="text-white/60">Browse 50+ manga sites in one place. Switch sources anytime, find the best quality for any title.</p>
       </div>
       <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8">
         <div class="font-display text-7xl brand-gradient-text mb-3">03</div>
-        <h3 class="text-xl font-bold mb-2">Dive in</h3>
-        <p class="text-white/60">Start reading instantly. Bookmark, download, enjoy.</p>
+        <h3 class="text-xl font-bold mb-2">Choose a manga title</h3>
+        <p class="text-white/60">Search across all sources at once. New chapters appear the moment they drop.</p>
+      </div>
+      <div class="relative bg-white/5 border border-white/10 rounded-3xl p-8">
+        <div class="font-display text-7xl brand-gradient-text mb-3">04</div>
+        <h3 class="text-xl font-bold mb-2">Favorite, read, sync</h3>
+        <p class="text-white/60">Zero ads between pages. Bookmark your favorites and your progress syncs instantly across all your devices.</p>
       </div>
     </div>
   </div>
@@ -330,7 +389,7 @@
         <div class="text-yellow-400 mb-3">★★★★★</div>
         <p class="text-white/80 mb-5">"Finally a manga app that doesn't shove ads between every page. The reader is clean and the library is huge."</p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-600"></div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 border-2 border-[#0b0b14] flex items-center justify-center text-white text-sm font-bold">K</div>
           <div>
             <div class="font-semibold text-sm">Kenji M.</div>
             <div class="text-xs text-white/50">Verified user</div>
@@ -341,7 +400,7 @@
         <div class="text-yellow-400 mb-3">★★★★★</div>
         <p class="text-white/80 mb-5">"I read on my commute every day. Offline mode is a lifesaver in the subway. Switched from 3 other apps to this one."</p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500"></div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500 border-2 border-[#0b0b14] flex items-center justify-center text-white text-sm font-bold">M</div>
           <div>
             <div class="font-semibold text-sm">Maya R.</div>
             <div class="text-xs text-white/50">Verified user</div>
@@ -352,7 +411,7 @@
         <div class="text-yellow-400 mb-3">★★★★★</div>
         <p class="text-white/80 mb-5">"Updates faster than any other app I've tried. New One Piece chapter shows up within minutes. 10/10."</p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-indigo-600"></div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-indigo-600 border-2 border-[#0b0b14] flex items-center justify-center text-white text-sm font-bold">A</div>
           <div>
             <div class="font-semibold text-sm">Alex T.</div>
             <div class="text-xs text-white/50">Verified user</div>
@@ -375,10 +434,6 @@
       <details class="group bg-white/5 border border-white/10 rounded-2xl p-5 cursor-pointer">
         <summary class="font-semibold flex justify-between items-center">Can I read offline?<span class="group-open:rotate-45 transition text-xl">+</span></summary>
         <p class="text-white/60 mt-3">Yes. Tap the download icon on any chapter to save it locally. Read with no internet, no problem.</p>
-      </details>
-      <details class="group bg-white/5 border border-white/10 rounded-2xl p-5 cursor-pointer">
-        <summary class="font-semibold flex justify-between items-center">Is it available on iPhone?<span class="group-open:rotate-45 transition text-xl">+</span></summary>
-        <p class="text-white/60 mt-3">An iOS version is in the works. For now, EZ Manga is available on Android via Google Play.</p>
       </details>
       <details class="group bg-white/5 border border-white/10 rounded-2xl p-5 cursor-pointer">
         <summary class="font-semibold flex justify-between items-center">How often is content updated?<span class="group-open:rotate-45 transition text-xl">+</span></summary>
@@ -410,7 +465,7 @@
           <div class="text-base font-bold">Google Play</div>
         </div>
       </a>
-      <a href="https://apps.apple.com/app/ez-manga-web-browser/id676212669" target="_blank"
+      <a href="https://apps.apple.com/app/ez-manga-web-browser/id6762126699" target="_blank"
          class="flex items-center justify-center gap-3 bg-white/10 border border-white/15 px-6 py-4 rounded-2xl hover:bg-white/15 transition">
         <svg viewBox="0 0 24 24" class="w-7 h-7" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <div class="text-left leading-tight">
